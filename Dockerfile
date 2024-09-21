@@ -16,4 +16,4 @@ RUN go mod download
 COPY . .
 
 # Run the application using the air config
-CMD ["air", "-c", ".air.toml"]
+CMD ["sh", "-c", "sleep 30 && air -c .air.toml"]
