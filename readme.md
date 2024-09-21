@@ -31,20 +31,17 @@ Explain how to use the project and provide examples.
 3. **Start the Docker Compose**
 
    ```shell
-  docker-compose up --build
-   ```
-
+    docker-compose up --build
+    ```
    Run Containers in Detached Mode (containers will run in the background):
-
    ```shell
-  docker-compose up --build -d
-   ```
+    docker-compose up --build -d
+    ```
 
 4. **Start the Migration**
-
    ```shell
-  dbmate -u "mysql://cPZKdNerJD:XMhRNy6m78@127.0.0.1:3306/anekazoodb" up
-   ```
+    dbmate -u "mysql://cPZKdNerJD:XMhRNy6m78@127.0.0.1:3306/anekazoodb" up
+    ```
 
 5. **Services**
 - API (Golang)          = http://localhost:3000
