@@ -28,23 +28,25 @@ Explain how to use the project and provide examples.
     cp .env.example .env
     ```
 
-3. Start the Docker Compose:
+3. **Start the Docker Compose**
 
    ```shell
   docker-compose up --build
    ```
+
    Run Containers in Detached Mode (containers will run in the background):
+
    ```shell
   docker-compose up --build -d
    ```
 
-4. Start the Migration:
+4. **Start the Migration**
 
    ```shell
   dbmate -u "mysql://cPZKdNerJD:XMhRNy6m78@127.0.0.1:3306/anekazoodb" up
    ```
 
-5. Services:
+5. **Services**
 - API (Golang)          = http://localhost:3000
 - Documention Swagger   = http://localhost:3000/swagger 
 - MySQL Database        = localhost:3306
