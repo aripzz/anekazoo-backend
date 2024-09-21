@@ -1,0 +1,135 @@
+basePath: /
+definitions:
+  entity.Animal:
+    properties:
+      class:
+        type: string
+      id:
+        type: integer
+      legs:
+        type: integer
+      name:
+        type: string
+    type: object
+  entity.CreateAnimal:
+    properties:
+      class:
+        type: string
+      legs:
+        type: integer
+      name:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact: {}
+  description: API documentation for Anekazoo backend.
+  title: Anekazoo API
+  version: "1.0"
+paths:
+  /api/v1/animals:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all animals
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entity.Animal'
+            type: array
+      summary: Get all animals
+      tags:
+      - animals
+    post:
+      consumes:
+      - application/json
+      description: Add a new animal to the database
+      parameters:
+      - description: Animal data
+        in: body
+        name: animal
+        required: true
+        schema:
+          $ref: '#/definitions/entity.CreateAnimal'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Animal created
+          schema:
+            type: string
+      summary: Create a new animal
+      tags:
+      - animals
+  /api/v1/animals/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete an animal by ID
+      parameters:
+      - description: Animal ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Animal deleted
+          schema:
+            type: string
+      summary: Delete an animal
+      tags:
+      - animals
+    get:
+      consumes:
+      - application/json
+      description: Get a single animal by ID
+      parameters:
+      - description: Animal ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Animal'
+      summary: Get an animal by ID
+      tags:
+      - animals
+    put:
+      consumes:
+      - application/json
+      description: Update an animal's data
+      parameters:
+      - description: Animal ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Animal data
+        in: body
+        name: animal
+        required: true
+        schema:
+          $ref: '#/definitions/entity.Animal'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Animal updated
+          schema:
+            type: string
+      summary: Update an existing animal
+      tags:
+      - animals
+swagger: "2.0"
