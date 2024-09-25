@@ -7,6 +7,7 @@ These instructions will help you get the project up and running on your local ma
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Dbmate](https://github.com/amacneil/dbmate)
+- [Golang](https://go.dev/dl/)
 
 ### Usage
 
@@ -48,3 +49,8 @@ Explain how to use the project and provide examples.
 - Documention Swagger   = http://localhost:3000/swagger 
 - MySQL Database        = localhost:3306
 - PhpMyAdmin            = http://localhost:8081 (Server: mysql, user: root, password: root)
+
+6. **Unit Test**
+   ```shell
+    go test ./...
+    ```
